@@ -1,6 +1,5 @@
 @file:Suppress("UNCHECKED_CAST", "unused")
 
-package org.rasulov.utilities.fragment
 
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -20,7 +19,6 @@ import kotlin.reflect.KProperty
  * Fragment(@LayoutRes int contentLayoutId) with providing your layout in constructor or
  * create as usual in onCreateView method in order to viewBinding's delegate will be able
  * to bind to the view on its own.
- *
  *
  * Note that accessing viewBinding while fragment's view is
  * destroyed or not created will throw IllegalStateException.
@@ -59,9 +57,9 @@ class LazyFragmentsViewBinding<VB : ViewBinding>(
         })
 
         val bindMethod = VBClazz.getMethod("bind", View::class.java)
-        val viewBinding = bindMethod.invoke(null, view) as VB
-        binding = viewBinding
-        return viewBinding
+        val newBinding = bindMethod.invoke(null, view) as VB
+        binding = newBinding
+        return newBinding
     }
 
 }
