@@ -18,8 +18,8 @@ import kotlin.reflect.KProperty
  * When using this delegate make sure the Fragment is inherited from
  * Fragment(@LayoutRes int contentLayoutId) with providing your layout in constructor or
  * create as usual in onCreateView method in order to viewBinding's delegate will be able
- * to bind to the view on its own.
- *
+ * to bind to the view on its own. 
+ * 
  * Note that accessing viewBinding while fragment's view is
  * destroyed or not created will throw IllegalStateException.
  **/
