@@ -6,7 +6,6 @@ To enable view binding, set the viewBinding build option to true in the module-l
 
 ```groovy
 android {
-
     buildFeatures {
         viewBinding true
     }
@@ -20,41 +19,40 @@ android {
 ```kotlin
 class SampleFragment : Fragment() {
 
-	private var _binding: FragmentSampleBinding? = null
-	private val binding get() = _binding!!
+    private var _binding: FragmentSampleBinding? = null
+    private val binding get() = _binding!!
 
-	override fun onCreateView(
-   	 	inflater: LayoutInflater,
-    	container: ViewGroup?,
-    	savedInstanceState: Bundle?
-	): View {
-    	_binding = FragmentSampleBinding.inflate(inflater, container, false)
-    	return binding.root
-	}
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentSampleBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
-        	 textView.text = "Some text"
-       		 button.setOnClickListener{
-       		 	//some action
-       		 }
-    	}
+            textView.text = "Some text"
+            button.setOnClickListener {
+                //some action
+            }
+        }
 
     }
 
-	override fun onDestroyView() {
-  	  super.onDestroyView()
-   	 _binding = null
-	}
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
 }
 ```
 ###	With the delegate
 
-	The delegate considers fragment's view lifecycle, clears the reference when current view is destroyed and prevent memory leaks.
-	Example below
+The delegate considers fragment's view lifecycle, clears the reference when current view is destroyed and prevent memory leaks.
 
 ```kotlin
 class ListFragment : Fragment(R.layout.fragment_sample) {
@@ -65,12 +63,11 @@ class ListFragment : Fragment(R.layout.fragment_sample) {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
-        	 textView.text = "Some text"
-       		 button.setOnClickListener{
-       		 	//some action
-       		 }
-    	}
-
+            textView.text = "Some text"
+            button.setOnClickListener {
+                //some action
+            }
+        }
     }
 ```
 
