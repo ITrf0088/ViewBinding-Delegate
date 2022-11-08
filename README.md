@@ -11,6 +11,7 @@ android {
     }
 }
 ```
+Please note that you need to copy the source code to work with the delegate, because it's not currently in some repository.
 
 ## Fragment sample
 
