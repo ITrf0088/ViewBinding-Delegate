@@ -1,6 +1,6 @@
 # ViewBindingDelegate
 
-A delegate that makes it a little easier to work with [Android View Binding](https://d.android.com/topic/libraries/view-binding).  
+A delegate that makes it easier to work with [Android View Binding](https://d.android.com/topic/libraries/view-binding).  
 
 To enable view binding, set the viewBinding build option to true in the module-level build.gradle file, as shown in the following example:
 
